@@ -1,0 +1,164 @@
+:root {
+    --bg-1000: #fff6de;
+    --bg-900: #f9f1db;
+    --bg-800: #f1e8cf;
+    --bg-700: #d2c9b1;
+    --bg-600: #f0f6c2;
+    --accent: #8d9936;
+    --text: #322e1f;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-1000: #141016;
+        --bg-900: #1B141E;
+        --bg-800: #2A202F;
+        --bg-700: #443749;
+        --bg-600: #513D60;
+        --accent: #CDA1EC;
+        --text: #E2DFE3;
+    }
+}
+
+body {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Lora", serif;
+    font-size: 20px;
+
+    background: var(--bg-1000);
+    color: var(--text);
+}
+
+h2 {
+    padding-bottom: .2em;
+    border-bottom: 1px solid var(--bg-700);
+}
+
+header {
+    width: min(900px, calc(100% - 8px));
+
+    margin: 0 auto;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid var(--bg-700);
+}
+
+.title {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+}
+
+nav a {
+    height: 2em;
+    padding: 0 1em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: inherit;
+    text-decoration: none;
+    background: var(--bg-800);
+    border: 1px solid var(--bg-700);
+    border-radius: 8px;
+
+    transition: background .2s ease-out;
+}
+
+nav a:hover {
+    background: var(--bg-900);
+}
+
+nav a:active {
+    background: var(--bg-700);
+}
+
+main {
+    width: min(900px, calc(100% - 8px));
+
+    margin: 0 auto;
+    padding: .5em 1em 5em 1em;
+}
+
+code {
+    padding: .1em .2em;
+    color: var(--fg1);
+    background: var(--bg1);
+    border-radius: 4px;
+}
+
+pre:has(code) {
+    color: var(--bg-1000);
+    background: var(--text);
+    border-radius: 4px;
+}
+
+button {
+    padding: .5em 1em;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    border: 1px solid var(--bg-700);
+    border-radius: 8px;
+    color: var(--text);
+    background: var(--bg-800);
+
+    transition: background .2s ease-out, transform .05s ease-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: var(--bg-900);
+}
+
+button:active {
+    transform: scale(.95);
+    background: var(--bg-700);
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.max {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--bg-700);
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

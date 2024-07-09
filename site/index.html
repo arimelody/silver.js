@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Silver.js - A simple state management library.</title>
+        <link href="main.css" rel="stylesheet">
+        <link href="code.css" rel="stylesheet">
+        <script src="vendor/highlight/highlight.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Silver.js</h1>
+            <nav>
+                <a href="/">Docs</a>
+                <a href="/silver.min.js">Download</a>
+            </nav>
+        </header>
+        <main>
+            <p>
+                Silver is a simple state management library, built to function
+                similarly to the state management used in Svelte.
+            </p>
+            
+            <h2>How does it work?</h2>
+
+            <p>
+                Starting with Silver is as simple as importing the library and
+                creating a <code>Stateful</code> object, like so:
+            </p>
+
+            <pre><code class="language-javascript">import Stateful from "./silver.js";
+
+const count = new Stateful(0);
+
+console.log(count.get()); // 0</code></pre>
+
+            <p>
+                We can respond to changes in the stateful value easily using
+                <code>onUpdate()</code>:
+            </p>
+
+            <pre><code class="language-javascript">let listener = count.onUpdate(value => {
+    alert(`Count updated! ${value}`);
+});</code></pre>
+
+            <p>
+                Your listener functions will be called whenever the value is
+                changed:
+            </p>
+
+            <pre><code class="language-javascript">count.set(5); // Count updated! 5
+
+count.update(value => value + 10); // Count updated! 15</code></pre>
+
+            <p>
+                Of course, you can remove your listeners as follows:
+            </p>
+
+            <pre><code class="language-javascript">count.removeListener(listener);
+
+count.set(5); // ...</code></pre>
+
+            <p>
+                And that's all there is to know about Silver! It's dead-simple,
+                and can be used in a wide variety of applications.
+            </p>
+
+            <br>
+
+            <h2>Demo</h2>
+
+            <p>
+                Below is a simple example for building a responsive counter
+                button with Silver:
+            </p>
+
+            <p>
+                Code:
+            </p>
+
+            <pre><code class="language-javascript">import Stateful from "./silver.js";
+
+const demoButton = document.getElementById("button");
+const count = new Stateful(0);
+demoButton.textContent = "Count: " + count.get();
+
+let listener = count.onUpdate(value => {
+    demoButton.textContent = "Count: " + value;
+});
+
+demoButton.addEventListener("click", event => {
+    event.preventDefault();
+    count.update(value => value + 1);
+});</code></pre>
+
+            <p>
+                Result:
+            </p>
+
+            <button type="button" id="button">+1</button>
+        </main>
+
+        <footer>
+            <span>
+                made with ♥ by <a href="https://arimelody.me">ari melody</a>, 2024
+            </span>
+        </footer>
+
+        <script type="module">
+            import Stateful from "./silver.js";
+
+            const demoButton = document.getElementById("button");
+            const count = new Stateful(0);
+            demoButton.textContent = "Count: " + count.get();
+
+            let listener = count.onUpdate(value => {
+                demoButton.textContent = "Count: " + value;
+            });
+
+            demoButton.addEventListener("click", event => {
+                event.preventDefault();
+                count.update(value => value + 1);
+            });
+
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

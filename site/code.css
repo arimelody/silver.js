@@ -1,0 +1,106 @@
+:root {
+    --bg1: #101010;
+    --bg2: #181818;
+    --bg3: #202020;
+    --bg4: #282828;
+    --fg1: #ffffff;
+    --fg2: #e0e0e0;
+    --fg3: #d0d0d0;
+    --fg4: #c0c0c0;
+    --red: #ff5656;
+    --yellow: #f8e05b;
+    --orange: #ffb454;
+    --green: #b7fd49;
+    --cyan: #4bfcf6;
+    --blue: #5eb2ff;
+    --pink: #f788fe;
+}
+/*!
+    Theme: Bliss Code
+    Description: Original highlight.js style, modified to match the bliss town palette.
+    Author: (c) Ari Melody <ari@arimelody.me>
+    Maintainer: Ari Melody <ari@arimelody.me>
+    Website: https://bliss.town/
+    License: see project LICENSE
+    Touched: 2021
+ */
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+}
+code.hljs {
+    padding: 3px 5px;
+}
+.hljs {
+    background: var(--bg1);
+    color: var(--fg1);
+}
+.hljs-comment {
+    color: var(--fg4);
+}
+.hljs-tag,
+.hljs-punctuation {
+    color: var(--fg2);
+}
+.hljs-tag .hljs-name,
+.hljs-tag .hljs-attr {
+    color: var(--fg2);
+}
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-meta .hljs-keyword,
+.hljs-doctag,
+.hljs-name {
+    font-weight: bold;
+}
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+    color: var(--green);
+}
+.hljs-title,
+.hljs-section {
+    color: var(--yellow);
+    font-weight: bold;
+}
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-operator,
+.hljs-selector-pseudo {
+    color: var(--blue);
+}
+/* Language color: hue: 90; */
+.hljs-literal {
+    color: #695;
+}
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+    color: #397300;
+}
+/* Meta color: hue: 200 */
+.hljs-meta {
+    color: #1f7199;
+}
+.hljs-meta .hljs-string {
+    color: #38a;
+}
+/* Misc effects */
+.hljs-emphasis {
+    font-style: italic;
+}
+.hljs-strong {
+    font-weight: bold;
+}
